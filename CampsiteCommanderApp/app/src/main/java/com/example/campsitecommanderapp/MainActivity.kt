@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.ViewFlipper
 import android.window.SplashScreen
 import androidx.activity.ComponentActivity
@@ -74,11 +75,30 @@ class MainActivity : ComponentActivity() {
             names[1] = "Marshmallows";categories[1] = "Food"; quantities[1]=3; comments[1] = "For S'mores (Mega Size)"
             names[2] = "FlashLight"; categories[2] = "Safety"; quantities[2]=2; comments[2] = "Check batteries(AA)"
 
+
+            currentItemCount = 3
+            updateQuantityListWithLoop(txtTotalItems)
+            Toast.makeText(this,"Assignment Sample data loaded",Toast.LENGTH_SHORT).show()
+        }else {
+            Toast.makeText(this,"Data Array already initialised.",Toast.LENGTH_SHORT).show()
         }
+        //Gear Validation and Input
+        btnAddGear.setOnClickListener {
+            val name = edtItemName.text.toString().trim()
+            val category = edtCategory.text.toString().trim()
+            val quantity = edtQuantity.text.toString().trim()
+            val comments = edtComments.text.toString().trim()
 
-
+            //Input Error Handling
+            if (name.isEmpty() || category.isEmpty() || quantity.isEmpty() || comments.isEmpty()) {
+                Toast.makeText(this,"Please fill in all the fields/boxes",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
-    private fun updateQuantityList(){
+
+
+
+    private fun updateQuantityListWithLoop(){
         var calculatedTotal = 0 //Set the calculated total to 0 to begin
         for (i in 0 until maxItems) {
            calculatedTotal += quantities[i]
