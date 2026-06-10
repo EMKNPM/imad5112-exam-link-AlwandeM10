@@ -1,10 +1,12 @@
 package com.example.campsitecommanderapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.ViewFlipper
 import android.window.SplashScreen
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,41 +33,52 @@ private var itemDetails = Array(maxItems) {""}
                 private var quantities = Array(maxItems) {""}
 private var comments = Array(maxItems) {""}
 
+//Initial itemCount set to zero(0)
+private var currentItemCount = 0
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) //Linking layout and kt. file
 
+        //Link UI Elements
+        val txtTotalItems = findViewById<TextView>(R.id.txtTotalItems)
+        val txtQuantity = findViewById<TextView>(R.id.txtQuantity)
+        val txtDetailedList = findViewById<TextView>(R.id.txtDetailedList)
 
-
-
-//Link mainScreen layout buttons
+  val edtItemName = findViewById<EditText>(R.id.edtItemName)
         val btnAddGear = findViewById<Button>(R.id.btnAddGear)
         val btnDisplay = findViewById<Button>(R.id.btnDisplay)
 
-        //Link viewScreenLayout components
-        val txtItem = findViewById<TextView>(R.id.txtItem)
+
+
         val txtCategory = findViewById<TextView>(R.id.txtCategory)
-        val txtQuantity = findViewById<TextView>(R.id.txtQuantity)
         val edtComments = findViewById<EditText>(R.id.edtComments)
         val btnDisplayGear = findViewById<Button>(R.id.btnDisplayGear)
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnAddGear.setOnClickListener {
-            val Item =
-                txtItem.text.toString() //This line is for extracting the item entered by the user
+            val ItemName =
+                edtItemName.text.toString() //This line is for extracting the item entered by the user
             val Category =
                 txtCategory.text.toString() //This line is for extracting the category entered by the user
             val Quantity =
                 txtQuantity.text.toString() //This line is for extracting the quantity entered by the user
 
-            if (Item.isEmpty()) { //Checks if the Item input field was filled in
-                txtItem.text = "Please enter an Item"
+            if (ItemName.isEmpty()) { //Checks if the Item input field was filled in
+                edtItemName.text = "Please enter an item"
                 return@setOnClickListener
             }
             btnDisplay.setOnClickListener {
 
             }
+
         }
+
+    }
+    private fun updateQuantityList(){
+        var calculatedTotal = 0 //Set the calculated total to 0 to begin
+        
+
     }
 }

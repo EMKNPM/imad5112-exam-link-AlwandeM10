@@ -2,13 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#1B2A22"
+    android:padding="16dp">
+
+
+
     <!--WELCOME SCREEN-->
     <LinearLayout
-        android:id="@+id/welcomeSplashLayout"
+        android:id="@+id/screenSplash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         android:background="@drawable/CampIcon" >
 
         <ImageView
@@ -25,9 +31,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Campsite Commander"
+            android:textColor="#E8F5E9"
             android:textStyle="bold"
             android:textSize="30sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 
 <!--MAIN SCREEN-->
@@ -36,6 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"/>
+
+
     <Button
         android:id="@+id/btnAddGear"
         android:layout_width="wrap_content"
@@ -58,8 +69,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtItem"
+        <EditText
+            android:id="@+id/edtItemName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Add Item"
@@ -81,6 +92,16 @@
             android:text="Add Quantity"
             android:textSize="16sp"
             android:layout_marginBottom="22dp"/>
+
+        <TextView
+            android:id="@+id/txtTotalItems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/txtDetailedList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <EditText
             android:id="@+id/edtComments"
