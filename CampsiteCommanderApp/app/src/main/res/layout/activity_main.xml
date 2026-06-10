@@ -8,22 +8,26 @@
         android:id="@+id/welcomeSplashLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/CampIcon" >
 
         <ImageView
             android:id="@+id/welcomeImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="480dp"
             android:src="@drawable/CampIcon"
             android:scaleType="centerCrop"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/txtLogo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Campsite Commander"/>
+            android:text="Campsite Commander"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"/>
     </LinearLayout>
 
 <!--MAIN SCREEN-->
@@ -40,5 +44,63 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="Display Total Items Packed"/>
+
+    <!--VIEW SCREEN-->
+    <LinearLayout
+        android:id="@+id/viewScreenLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add Item"
+            android:textSize="16sp"
+            android:layout_marginBottom="22dp"/>
+
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add Category"
+            android:textSize="16sp"
+            android:layout_marginBottom="22dp"/>
+
+        <TextView
+            android:id="@+id/txtQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add Quantity"
+            android:textSize="16sp"
+            android:layout_marginBottom="22dp"/>
+
+        <EditText
+            android:id="@+id/edtComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Add your comments here..."
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+
+
+        <Button
+            android:id="@+id/btnDisplayGear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Display Full List of Gear"
+            android:textSize="20sp"
+            android:textStyle="normal"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Back To Base"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </LinearLayout>
