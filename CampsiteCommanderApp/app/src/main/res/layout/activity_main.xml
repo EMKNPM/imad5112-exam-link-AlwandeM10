@@ -15,7 +15,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/CampIcon" >
+        android:background="@drawable/CampIcon"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/welcomeImage"
@@ -29,14 +30,13 @@
         <TextView
             android:id="@+id/txtLogo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Campsite Commander"
             android:textColor="#E8F5E9"
             android:textStyle="bold"
             android:textSize="30sp"
             android:gravity="center"
             android:layout_marginTop="16dp"/>
-
     </LinearLayout>
 
 <!--MAIN SCREEN-->
@@ -44,90 +44,149 @@
         android:id="@+id/mainScreenLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        android:visibility="gone"/>
 
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Campsite DashBoard"
+    android:textColor="E8F5E9"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="E8F5E9"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Items Packed"
+        android:textColor="A5D6A7"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/txtTotalItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"/>
+</LinearLayout>
+    <EditText
+        android:id="@+id/edtItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name e.g. Tent"
+        android:textColorHint="#81C784"
+        android:textColor="FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/edtCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category (shelter,food,safety)"
+        android:textColorHint="#81C784"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/edtQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:textColorHint="#81C784"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/edtComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:textColorHint="#81C784"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnInitialise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Sample Gear Data"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/btnAddGear"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Add Gear"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Gear To Packing List"
+        android:backgroundTint="#2E7D32"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
 
     <Button
-        android:id="@+id/btnDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Display Total Items Packed"/>
-
-
-    <!--VIEW SCREEN-->
-    <LinearLayout
-        android:id="@+id/viewScreenLayout"
-        android:orientation="vertical"
+        android:id="@+id/btnGoToDetails"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <EditText
-            android:id="@+id/edtItemName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Add Item"
-            android:textSize="16sp"
-            android:layout_marginBottom="22dp"/>
-
-        <TextView
-            android:id="@+id/txtCategory"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Add Category"
-            android:textSize="16sp"
-            android:layout_marginBottom="22dp"/>
-
-        <TextView
-            android:id="@+id/txtQuantity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Add Quantity"
-            android:textSize="16sp"
-            android:layout_marginBottom="22dp"/>
-
-        <TextView
-            android:id="@+id/txtTotalItems"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <TextView
-            android:id="@+id/txtDetailedList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <EditText
-            android:id="@+id/edtComments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Add your comments here..."
-            android:textSize="20sp"
-            android:textStyle="italic"/>
+        android:layout_height="wrap_content"
+        android:text="View Detailed Gear List"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF" />
 
 
-        <Button
-            android:id="@+id/btnDisplayGear"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Display Full List of Gear"
-            android:textSize="20sp"
-            android:textStyle="normal"/>
+<LinearLayout
+android:id="@+id/screenDetails"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:visibility="gone">
 
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Back To Base"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Detailed Packing CheckList"
+    android:textColor="#E8F5E9"
+    android:textSize = "24sp"
+    android:texStyle = "bold"
+    android:layout_marginnBottom = "16dp"/>
 
-    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:layout_marginBottom="16dp">
+
+    <TextView
+        android:id="@+id/txtDetailedList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Items Added Yet"
+        android:textColor="#E8F5E9"
+        android:textSize="16sp"
+        android:lineSpacingExtra="6dp"/>
+</ScrollView>
+
+  <Button
+      android:id="@+id/btnBacktoBase"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Back To Base (Main Screen)"
+      android:backgroundTint="#C62828"
+      android:textColor="FFFFFF"/>
 
 </LinearLayout>
+
+</LinearLayout>
+
+

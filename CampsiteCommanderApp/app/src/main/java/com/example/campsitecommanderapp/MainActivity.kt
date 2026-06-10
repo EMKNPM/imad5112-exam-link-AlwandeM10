@@ -72,7 +72,9 @@ class MainActivity : ComponentActivity() {
             btnDisplay.setOnClickListener {
 
             }
-
+btnBack.setOnClickListener {
+    //Replace viewFlipper HERE //
+}
         }
 
     }
@@ -81,7 +83,7 @@ class MainActivity : ComponentActivity() {
         for (i in 0 until maxItems) {
            calculatedTotal += itemQuantities[i]
         }
-        totalTextView.text =calculatedTotal.toString()
+        totalTextView.text = calculatedTotal.toString()
 
     }
 }
