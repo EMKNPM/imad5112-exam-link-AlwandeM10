@@ -1,6 +1,7 @@
 package com.example.campsitecommanderapp
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -18,7 +19,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) //Linking layout and kt. file
 
-        
+//Link activity main buttons
+       val btnAddGear = findViewById<Button>(R.id.btnAddGear)
+        val btnDisplay = findViewById<Button>(R.id.btnDisplay)
+
+        btnDisplay.setOnClickListener {
+showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented
+        }
+
+
 
     }
 }
