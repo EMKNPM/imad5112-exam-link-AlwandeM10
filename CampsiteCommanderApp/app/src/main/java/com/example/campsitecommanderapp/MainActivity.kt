@@ -29,6 +29,7 @@ private val maxItems = 100
 private var itemDetails = Array(maxItems) {""}
         private var categories =Array(maxItems) {""}
                 private var quantities = Array(maxItems) {""}
+private var comments = Array(maxItems) {""}
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
