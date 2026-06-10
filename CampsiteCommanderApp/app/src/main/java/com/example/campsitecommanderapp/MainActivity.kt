@@ -30,10 +30,10 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main) //Linking layout and kt. file
 
         //Parallel Arrays definition/Accounting
-        
+
 
 //Link mainScreen layout buttons
-       val btnAddGear = findViewById<Button>(R.id.btnAddGear)
+        val btnAddGear = findViewById<Button>(R.id.btnAddGear)
         val btnDisplay = findViewById<Button>(R.id.btnDisplay)
 
         //Link viewScreenLayout components
@@ -45,20 +45,20 @@ class MainActivity : ComponentActivity() {
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnAddGear.setOnClickListener {
-            val Item = txtItem.text.toString() //This line is for extracting the item entered by the user
-            val Category = txtCategory.text.toString() //This line is for extracting the category entered by the user
-            val Quantity = txtQuantity.text.toString() //This line is for extracting the quantity entered by the user
+            val Item =
+                txtItem.text.toString() //This line is for extracting the item entered by the user
+            val Category =
+                txtCategory.text.toString() //This line is for extracting the category entered by the user
+            val Quantity =
+                txtQuantity.text.toString() //This line is for extracting the quantity entered by the user
+
+            if (Item.isEmpty()) { //Checks if the Item input field was filled in
+                txtItem.text = "Please enter an Item"
+                return@setOnClickListener
+            }
+            btnDisplay.setOnClickListener {
+
+            }
         }
-        btnDisplay.setOnClickListener {
-showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented.
-        }
-
-
-
-        }
-    private fun showItems() {
-
     }
-
-
 }
