@@ -23,11 +23,21 @@ class MainActivity : ComponentActivity() {
        val btnAddGear = findViewById<Button>(R.id.btnAddGear)
         val btnDisplay = findViewById<Button>(R.id.btnDisplay)
 
+        btnAddGear.setOnClickListener {
+            AddItems()
+        }
         btnDisplay.setOnClickListener {
 showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented
         }
 
 
 
+        }
+    private fun showItems() {
+
+    }
+
+    private fun AddItems() {
+        
     }
 }
