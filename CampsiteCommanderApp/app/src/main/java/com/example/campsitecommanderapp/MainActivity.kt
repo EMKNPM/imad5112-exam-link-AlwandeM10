@@ -24,12 +24,18 @@ lateinit var welcomeSplashScreen: SplashScreen
 lateinit var viewScreenLayout: LinearLayout
 lateinit var mainScreenLayout: LinearLayout
 
+//Fixed Parallel Arrays definition/Accounting
+private val maxItems = 100
+private var itemDetails = Array(maxItems) {""}
+        private var categories =Array(maxItems) {""}
+                private var quantities = Array(maxItems) {""}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) //Linking layout and kt. file
 
-        //Parallel Arrays definition/Accounting
+
 
 
 //Link mainScreen layout buttons
