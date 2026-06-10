@@ -134,7 +134,15 @@ class MainActivity : ComponentActivity() {
 
                 }
             }
+            txtDetailedList.text = builder.toString()
+
+            screenMain.visibility = View.GONE
+            screenDetails.visibility = View.VISIBLE
         }
+
+         btnGoToDetails.setOnClickListener {
+             
+         }
 
     }
 
