@@ -41,10 +41,10 @@ class MainActivity : ComponentActivity() {
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnAddGear.setOnClickListener {
-            AddItems()
+            AddItems() //When the btnAddGear button is clicked, the addItems function is called and implemented.
         }
         btnDisplay.setOnClickListener {
-showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented
+showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented.
         }
 
 
