@@ -18,8 +18,14 @@
             android:scaleType="centerCrop"
             android:clickable="true"
             android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/txtLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Campsite Commander"/>
     </LinearLayout>
-    
+
 <!--MAIN SCREEN-->
     <Button
         android:id="@+id/btnAddGear"
