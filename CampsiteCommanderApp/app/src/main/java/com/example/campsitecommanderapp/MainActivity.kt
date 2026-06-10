@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.campsitecommanderapp.ui.theme.CampsiteCommanderAppTheme
+import kotlin.toString
 
 //The following represent different layouts in ONE Activity
 lateinit var welcomeSplashScreen: SplashScreen
@@ -27,6 +28,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) //Linking layout and kt. file
+
+        //Parallel Arrays definition/Accounting
+        
 
 //Link mainScreen layout buttons
        val btnAddGear = findViewById<Button>(R.id.btnAddGear)
@@ -41,7 +45,9 @@ class MainActivity : ComponentActivity() {
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnAddGear.setOnClickListener {
-            AddItems() //When the btnAddGear button is clicked, the addItems function is called and implemented.
+            val Item = txtItem.text.toString() //This line is for extracting the item entered by the user
+            val Category = txtCategory.text.toString() //This line is for extracting the category entered by the user
+            val Quantity = txtQuantity.text.toString() //This line is for extracting the quantity entered by the user
         }
         btnDisplay.setOnClickListener {
 showItems() //When the btnDisplay button is clicked, the showItems function is called and implemented.
@@ -54,7 +60,5 @@ showItems() //When the btnDisplay button is clicked, the showItems function is c
 
     }
 
-    private fun AddItems() {
 
-    }
 }
