@@ -84,16 +84,58 @@ class MainActivity : ComponentActivity() {
         }
         //Gear Validation and Input
         btnAddGear.setOnClickListener {
-            val name = edtItemName.text.toString().trim()
+            val names = edtItemName.text.toString().trim()
             val category = edtCategory.text.toString().trim()
             val quantity = edtQuantity.text.toString().trim()
             val comments = edtComments.text.toString().trim()
 
             //Input Error Handling
-            if (name.isEmpty() || category.isEmpty() || quantity.isEmpty() || comments.isEmpty()) {
+            if (names.isEmpty() || category.isEmpty() || quantity.isEmpty() || comments.isEmpty()) {
                 Toast.makeText(this,"Please fill in all the fields/boxes",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val qty = quantity.toIntOrNull()
+            Toast.makeText(this,"Quantity must be positive",Toast.LENGTH_SHORT).show()
+            return@setOnClickListener
+        }
+        if (currentItemCount >= maxItems) {
+            Toast.makeText(this,"CheckList Array Full", Toast.LENGTH_SHORT).show()
+        }
+
+        //Sync Values with arrays
+        names[currentItemCount] = names
+        quantities[currentItemCount] = quantities
+        categories[currentItemCount] = categories
+        comments[currentItemCount] = comments
+        currentItemCount++
+
+        //Clear Input Form
+        edtItemName.text.clear()
+        edtQuantity.text.clear()
+        edtCategory.text.clear()
+        edtComments.text.clear()
+
+        updateQuantityListWithLoop(txtTotalItems)
+        Toast.makeText(this,"$names added successfully", Toast.LENGTH_SHORT).show()
+
+        btnGoToDetails.setOnClickListener {
+            val builder = StringBuilder()
+
+            if (currentItemCount == 0) {
+                builder.append("No items matching arrays")
+            }else {
+                for (i in 0 until currentItemCount) {
+                    builder.append("Item #${i + 1}/n")
+                    builder.append("-Name: ${names[i]}/n")
+                    builder.append("-Category: ${categories[i]}/n")
+                    builder.append("-Quantity: ${quantities[i]}/n")
+                    builder.append("-Comments: ${comments[i]}/n")
+
+                }
             }
         }
+
     }
 
 
