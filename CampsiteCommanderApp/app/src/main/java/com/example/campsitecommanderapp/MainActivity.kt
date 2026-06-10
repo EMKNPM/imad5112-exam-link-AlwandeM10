@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                 txtQuantity.text.toString() //This line is for extracting the quantity entered by the user
 
             if (ItemName.isEmpty()) { //Checks if the Item input field was filled in
-                edtItemName.text = "Please enter an item"
+             edtItemName.text = "Please enter an item"
                 return@setOnClickListener
             }
             btnDisplay.setOnClickListener {
@@ -78,7 +78,10 @@ class MainActivity : ComponentActivity() {
     }
     private fun updateQuantityList(){
         var calculatedTotal = 0 //Set the calculated total to 0 to begin
-        
+        for (i in 0 until maxItems) {
+           calculatedTotal += itemQuantities[i]
+        }
+        totalTextView.text =calculatedTotal.toString()
 
     }
 }
