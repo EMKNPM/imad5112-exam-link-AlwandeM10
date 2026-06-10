@@ -2,6 +2,9 @@ package com.example.campsitecommanderapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -28,7 +31,7 @@ lateinit var mainScreenLayout: LinearLayout
 
 //Fixed Parallel Arrays definition/Accounting
 private val maxItems = 100
-private var itemDetails = Array(maxItems) {""}
+private var names = Array(maxItems) {""}
         private var categories =Array(maxItems) {""}
                 private var quantities = Array(maxItems) {0}
 private var comments = Array(maxItems) {""}
@@ -61,15 +64,26 @@ class MainActivity : ComponentActivity() {
                 val btnBackToBase = findViewById<Button>(R.id.btnBacktoBase)
 
         //Timed Splash screen
-        
+        Handler(Looper.getMainLooper()).postDelayed({
+            screenSplash.visibility = View.GONE
+            screenMain.visibility = View.VISIBLE},3000)
+
+        //Parallel Array
+        if (currentItemCount == 0) {
+            names[0] = "Tent"; categories[0] = "Shelter"; quantities[0]=1; comments[0] = "4-person waterproof"
+            names[1] = "Marshmallows";categories[1] = "Food"; quantities[1]=3; comments[1] = "For S'mores (Mega Size)"
+            names[2] = "FlashLight"; categories[2] = "Safety"; quantities[2]=2; comments[2] = "Check batteries(AA)"
+
+        }
+
 
     }
     private fun updateQuantityList(){
         var calculatedTotal = 0 //Set the calculated total to 0 to begin
         for (i in 0 until maxItems) {
-           calculatedTotal += itemQuantities[i]
+           calculatedTotal += quantities[i]
         }
-        totalTextView.text = calculatedTotal.toString()
+       txtTotalItems.text = calculatedTotal.toString()
 
     }
 }
